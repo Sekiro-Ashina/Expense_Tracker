@@ -46,3 +46,26 @@ body::after {
   border-radius: 28px;
   box-shadow: 0 24px 60px rgba(75, 66, 46, 0.14);
 }
+.hero {
+  margin-bottom: 28px;
+}
+.eyebrow,
+.section-kicker,
+.summary-label,
+.summary-note,
+label > span,
+.item-count {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+.eyebrow {
+  color: #5c754d;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.eyebrow-icon {
+  font-size: 1rem;
+}
