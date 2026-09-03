@@ -69,3 +69,34 @@ label > span,
 .eyebrow-icon {
   font-size: 1rem;
 }
+h1 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(2.25rem, 7vw, 3.25rem);
+  line-height: 1.05;
+  letter-spacing: -0.045em;
+  margin: 10px 0;
+}
+.hero p {
+  color: #687067;
+  font-size: 0.98rem;
+}
+.summary-card {
+  background: #253b2b;
+  color: #fffdf7;
+  padding: 24px 26px;
+  border-radius: 20px;
+  margin-bottom: 28px;
+  position: relative;
+  overflow: hidden;
+}
+.summary-card::after {
+  content: "✦";
+  position: absolute;
+  right: 21px;
+  top: 8px;
+  font-size: 4.8rem;
+  color: rgba(223, 238, 198, 0.12);
+}
+.summary-label {
+  color: #b6d0a5;
+}
