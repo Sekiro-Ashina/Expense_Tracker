@@ -5,7 +5,10 @@ document.addEventListener('DOMContentLoaded', () => {
    const itemList = document.querySelector('#expense-list');
    const totalAmountDisplay = document.querySelector('#total-amount');
 
-   let expenses = [];
+   let expenses = JSON.parse(localStorage.getItem('expenses')) || [];
+   let totalAmount =  0; 
+
+   renderExpenses(expenses); 
 
    document.addEventListener('submit', (e)=>{
       e.preventDefault();
@@ -18,16 +21,24 @@ document.addEventListener('DOMContentLoaded', () => {
             amount: expenseAmount
          }
          expenses.push(objExpense);
-         saveToLocalStorage(expenses); //why didn't we stored the object in local storage? why expense array? 
+         saveToLocalStorage(expenses); 
+         updateTotalAmount(expenses);
+         renderExpenses(expenses);
+         //reset the both input fields.
+         form.reset(); 
       }
-
    });
+
    function saveToLocalStorage(expenses){
       localStorage.setItem('expenses', JSON.stringify(expenses));
    }
 
+   function calculateTotalAmount(expenses){  
+      return expenses.reduce( 
+         (total, currentExpense) => total + currentExpense.amount,0 // why did we use currentExpense.amount? our array is expenses?  Because we are iterating over the expenses array, and for each expense object the currentExpense represents the current object in the iteration. And we are accessing the amount property of that object.
+      );
+   }
 
-
-
+ 
+   
 });
-
