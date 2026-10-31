@@ -39,6 +39,10 @@ document.addEventListener('DOMContentLoaded', () => {
       );
    }
 
- 
-   
+   function updateTotalAmount(expenses){ 
+      totalAmount = calculateTotalAmount(expenses);
+      totalAmountDisplay.textContent = totalAmount.toFixed(2); 
+   }
+
+
 });
