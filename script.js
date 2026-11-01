@@ -44,5 +44,20 @@ document.addEventListener('DOMContentLoaded', () => {
       totalAmountDisplay.textContent = totalAmount.toFixed(2); 
    }
 
+   function renderExpenses(expenses){
+      //clearing the list before rendering the new expenses to avoid duplicates.
+      // itemList.innerHTML = '';  
+      expenses.forEach(expense =>{
+         const listItem = document.createElement('li');
+         listItem.innerHTML = `${expense.name} - $${expense.amount}
+         <button data-id="${expense.id}" >Delete</button>`;
+         itemList.appendChild(listItem);
+      })
+
+
+   }
+
+  
+
 
 });
