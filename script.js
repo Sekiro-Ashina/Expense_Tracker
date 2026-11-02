@@ -57,7 +57,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
    }
 
-  
+   itemList.addEventListener('click', (e)=>{ 
+      if(e.target.tagName === 'BUTTON'){
+        const expenseId = parseInt(e.target.getAttribute('data-id'));
+        expenses = expenses.filter(expense => expense.id !== expenseId); //filter just check if condition is true keep it, and false one delete it.
+        saveToLocalStorage(expenses);
+         updateTotalAmount(expenses);
+         renderExpenses(expenses);
+      }     
+   });
 
 
 });
